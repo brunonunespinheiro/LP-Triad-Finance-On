@@ -1141,3 +1141,161 @@ img {
         display: none;
     }
 }
+
+/* Estilos otimizados para a Hero Section */
+
+.hero {
+    min-height: 100vh;
+    height: auto; /* Removido height fixo para permitir responsividade */
+    display: flex;
+    align-items: center;
+    background: var(--gradient);
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0 60px; /* Aumentado padding superior para compensar a navbar */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('hero-bg.png') center/cover no-repeat;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.hero-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite quebra em telas menores */
+    gap: 40px; /* Espaçamento entre os elementos quando quebram */
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.lead {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.emphasis {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.badge-feature {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.cta-group {
+    margin-top: 2rem;
+}
+
+.support-text {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 991px) {
+    .hero {
+        padding: 100px 0 50px;
+    }
+    
+    .hero-row {
+        flex-direction: column;
+    }
+    
+    .hero-text, .hero-image {
+        flex: none;
+        width: 100%;
+    }
+    
+    .hero-text {
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 100px 0 40px;
+    }
+    
+    .hero h1 {
+        font-size: 2.3rem;
+    }
+    
+    .lead {
+        font-size: 1.1rem;
+    }
+    
+    .emphasis {
+        font-size: 1.1rem;
+    }
+    
+    .btn-primary {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 90px 0 30px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .lead, .emphasis {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+}
