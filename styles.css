@@ -1299,3 +1299,228 @@ img {
         margin-bottom: 1rem;
     }
 }
+
+/* Ajustes para a seção Hero e botões */
+
+/* Ajuste para badge de 'Consultoria Financeira Especializada' */
+.badge-feature {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+/* Botão azul escuro (#1a1a2e) */
+.btn-dark-blue {
+    background: #1a1a2e;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(26, 26, 46, 0.4);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-dark-blue:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(26, 26, 46, 0.6);
+    background: #252547; /* Um tom levemente mais claro no hover */
+}
+
+/* Ajustes para responsividade da Hero */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 100px;
+        padding-bottom: 60px;
+    }
+    
+    .badge-feature {
+        padding: 6px 15px;
+        font-size: 0.8rem;
+        margin: 0 auto 1.2rem;
+        display: table;
+    }
+    
+    .hero-text {
+        text-align: center;
+    }
+    
+    .btn-primary, .btn-dark-blue {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 15px 20px;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .lead {
+        font-size: 1.1rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .emphasis {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Estilos para o Modal de Cadastro */
+
+/* Fundo do modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Conteúdo do modal */
+.modal-content {
+    background: var(--darker);
+    margin: 5% auto;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Botão de fechar */
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.close-modal:hover {
+    color: var(--primary);
+}
+
+/* Cabeçalho do modal */
+.modal-header {
+    padding: 25px 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.8), rgba(18, 18, 18, 0.8));
+}
+
+.modal-header h3 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.modal-header p {
+    opacity: 0.8;
+    margin-bottom: 0;
+}
+
+/* Corpo do modal */
+.modal-body {
+    padding: 30px;
+}
+
+/* Formulário */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: 'Exo', sans-serif;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(11, 143, 68, 0.2);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Botão de submit */
+.btn-full {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .modal-header {
+        padding: 20px;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+    
+    .modal-header h3 {
+        font-size: 1.5rem;
+    }
+}
